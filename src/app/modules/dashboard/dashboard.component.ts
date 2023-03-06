@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivitiesService } from 'src/app/services/activities.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+  activitiesArray = []
+  constructor(private activitiesService : ActivitiesService){}
   ngOnInit(): void {
-      console.log("work")
+    console.log("work")
+    this.activitiesService.getActivities()
+      .subscribe(data => {
+        console.log(data)
+    })
+  
   }
 }
