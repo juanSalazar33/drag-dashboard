@@ -1,0 +1,13 @@
+.lateral-left{
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: dodgerblue;
+    h1 {
+        top: 19px;
+        left: 19px;
+        position: absolute;
+        display: flex;
+        color: white;
+    }
+}
