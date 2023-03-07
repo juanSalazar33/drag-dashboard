@@ -9,14 +9,27 @@
             </mat-grid-tile>
         </mat-grid-list>
         <mat-divider></mat-divider>
-        <mat-grid-list cols="4" rowHeight="100px"  [gutterSize]="'20px'">
+        <mat-grid-list cols="4" rowHeight="350px"  [gutterSize]="'20px'">
             <mat-grid-tile 
-            *ngFor="let day of days"
+            *ngFor="let panel of panels; let i = index"
             [colspan]="1"
             [rowspan]="1"
-            [style.background]="day.color"
+            [style.background]="colorBackGround"
             >
-            {{day.text}}        
+            <div cdkDropListGroup class="example-container">
+                <div>
+                  <h2>{{panel}}</h2>
+                  <div
+                    id={{panel}}
+                    cdkDropList
+                    [cdkDropListData]="days[i]"
+                    class="example-list"
+                    [cdkDropListConnectedTo]="panels"
+                    (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let item of days[i]" cdkDrag>{{item.title}}</div>
+                  </div>
+                </div>
+              </div>   
         </mat-grid-tile>
         </mat-grid-list>
     </div>

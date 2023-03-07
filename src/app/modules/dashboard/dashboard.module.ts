@@ -5,7 +5,8 @@ import { DashboardRoutingModule } from './dashboard.routing';
 //Material
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [
     DashboardComponent
@@ -15,7 +16,8 @@ import {MatButtonModule} from '@angular/material/button';
     DashboardRoutingModule,
     MatGridListModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    DragDropModule
   ]
 })
 export class DashboardModule { 
